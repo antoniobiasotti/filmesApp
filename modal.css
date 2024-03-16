@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #313134;
+    --secondary-color: #0a0a0b;
+    --text-color: white;
+    --hover-color: #59595f;
+}
+
+#modal-overlay {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    visibility: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+#modal-background {
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 100%;
+    /* O position é dado em função do elemento mais próximo
+    com um position definido - no caso, o elemento pai - modal-overlay */
+    position: absolute;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+#modal-container {
+    z-index: 1;
+    background-color: var(--primary-color);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    max-width: 50%;
+}
+
+#movie-title {
+    padding: 1rem 0;
+}
+
+#modal-body {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+#movie-poster {
+    border-radius: 5px;
+}
+
+#movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 300px;
+    padding-left: 2rem;
+}
+
+#movie-plot {
+    text-align: justify;
+    margin-left: 5%;
+}
+
+#add-to-list {
+    border: 2px solid black;
+    padding: 0.5rem 0;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 1px 1px 10px #000;
+}
+
+#add-to-list:focus, #add-to-list:hover {
+    background-color: var(--hover-color);
+}
